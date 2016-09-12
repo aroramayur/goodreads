@@ -1,0 +1,11 @@
+{
+    "manifest_version":2,
+    "name":"NYT Movie Reviews ",
+    "version":"0.0.1",
+    "description":"Utilising the GoodReads API",
+    "browser_action":{
+        "default_action":"nyt.png",
+        "default_popup":"index.html"
+    },
+    "author":"Mayur Arora"
+}
