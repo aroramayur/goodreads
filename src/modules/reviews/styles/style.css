@@ -1,0 +1,25 @@
+:local(.result) {
+    margin:20px 0;
+    width:500px;
+    border-bottom:1px solid #EEEEEE;
+
+}
+:local(.byline) {
+    font-style: italic;
+    display:inline-block;
+}
+
+:local(.header) {
+    display: inline-block;
+}
+:local(.textualInfo) {
+    width:300px;
+    display: inline-block;
+    vertical-align: middle;
+}
+:local(.poster) {
+    max-width: 190px;
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}

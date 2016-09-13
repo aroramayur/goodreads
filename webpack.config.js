@@ -4,12 +4,21 @@ module.exports = {
         path:__dirname,
         filename:"dist/bundle.js"
     },
+    devtool:"source-map",
     module:{
         loaders:[
             {
                 test:/\.js$/,
                 exclude:/node_modules/,
                 loader:"babel-loader"
+            },
+            {
+                test:/\.html$/,
+                loader:"handlebars-loader"
+            },
+            {
+                test:/.css$/,
+                loader:"style-loader!css-loader"
             }
         ]
     }
