@@ -1,14 +1,22 @@
 :local(.result) {
-    margin:20px 0;
     width:500px;
     border-bottom:1px solid #EEEEEE;
-
+    padding:20px 0;
 }
+
+:local(.result):hover {
+    background-color:#EFEFEF;
+}
+
 :local(.byline) {
     font-style: italic;
     display:inline-block;
+    margin: 0 10px;
 }
-
+:local(.headline) {
+    font-weight: bold;
+    margin:10px 0;
+}
 :local(.header) {
     display: inline-block;
 }
@@ -16,10 +24,15 @@
     width:300px;
     display: inline-block;
     vertical-align: middle;
+    padding:5px;
 }
 :local(.poster) {
     max-width: 190px;
     width: 100%;
     display: inline-block;
     vertical-align: middle;
+}
+:local(#reviewUrl) {
+    text-decoration:none;
+    color:#5b9bd1;
 }
