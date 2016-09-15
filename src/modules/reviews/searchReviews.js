@@ -1,36 +1,25 @@
 import apiConstants from "../../constants/api.js";
-import reviewCardTemplate from "./templates/reviewCard.html";
 import reviewStyles from "./styles/style.css";
+import ReviewList from "./templates/reviewList.jsx";
+import React from "react";
+import ReactDom from "react-dom";
 
 function searchReviews(keyword) {
     var uri = apiConstants.SEARCH_API;
     uri += "?api-key=" + apiConstants.API_KEY + "&query=" + keyword;
-    fetch(uri)
-        .then(createReviewCards)
+    return fetch(uri)
+        .then(parseReviews)
         .catch((err) => {
-            console.log("Error while fetching reviews + " + err);
-        })
-}
-
-function createReviewCards(payload) {
-    if (payload.status !== 200) {
-        console.log("Looks like there was a problem . Status Code : " + payload.status);
-        return;
-    }
-    payload.json()
-        .then((data) => {
-            showResults(data);
-        })
-        .error((err) => {
-            console.log(err);
+            Console.error("Error while fetching reviews. " + err);
         });
 }
 
-function showResults(data) {
-    document.querySelector("#results").innerHTML = reviewCardTemplate({
-        results:data.results,
-        styles:reviewStyles
-    });
+function parseReviews(payload) {
+    return payload.json()
+        .then((data) => data)
+        .catch((err) => {
+            console.error("Error while parsing JSON.");
+        });
 }
 
 export default {

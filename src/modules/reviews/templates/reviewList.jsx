@@ -1,23 +1,25 @@
 import React from "react";
-import Reviews from "../searchReviews2.js";
+import Reviews from "../searchReviews.js";
 import ReviewCard from "./reviewCard.jsx";
+import reviewListStyles from "../styles/reviewList.css";
+import _ from "lodash";
 const ReviewList =  React.createClass({
     getInitialState:function() {
         return {
             results:[]
         };
     },
-    componentDidMount:function() {
-        var self = this;
-        Reviews.searchReviews("Wolf")
-        .then((d) => {
-            self.setState({
-                results:d.results
-            });
-        })
-        .catch((err) => {
-            console.error(err);
-        })
+    searchReviews:function(e) {
+      var self = this;
+      Reviews.searchReviews(e.target.value)
+      .then((d) => {
+          self.setState({
+              results:d.results
+          });
+      })
+      .catch((err) => {
+          console.error(err);
+      });
     },
     render:function() {
         let results = this.state.results.map(result => {
@@ -33,7 +35,10 @@ const ReviewList =  React.createClass({
            )
         });
         return (
-            <div>{results}</div>
+            <div>
+            <input id={reviewListStyles.textSearchReview} onKeyUp={this.searchReviews}  type='text' placeholder="search for a movie review ( title , cast , etc.)"></input>
+            {results}
+            </div>
         )      
     }
 });
