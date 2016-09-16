@@ -2,7 +2,7 @@
   "name": "GoodReads",
   "version": "0.0.1",
   "scripts": {
-    "build": "webpack --watch"
+    "build": "webpack --display-modules --watch"
   },
   "dependencies": {
     "css-loader": "^0.25.0",
@@ -11,7 +11,9 @@
     "lodash": "^4.15.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-loader": "^2.4.0",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.2"
   },
   "devDependencies": {

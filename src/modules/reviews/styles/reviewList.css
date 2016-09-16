@@ -1,9 +1,15 @@
 :local(#textSearchReview) {
-    width:100%;
+    width:350px;
+    margin:20px 0;
     height:40px;
     border-radius:5px;
-    border:1px solid #EFEFEF;  
-    margin: 10px 0; 
-    outline:none;   
+    border:1px solid #EFEFEF;
+    outline:none;
     padding:0 20px;
+    font-weight: bold;
+}
+
+:local(#logo) {
+    margin-left:15px;
+    vertical-align:middle;
 }
