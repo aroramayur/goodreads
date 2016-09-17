@@ -2,10 +2,22 @@ import React from "react";
 import reviewStyles from "../styles/style.css";
 
 class ReviewCard extends React.Component{
+    constructor(props) {
+        super(props);
+        this.url = props.url;
+    }
+    openTab(event) {
+        var self = this;
+        event.preventDefault(); 
+        chrome.tabs.create({
+            url:self.url,
+            active:false
+        }); 
+    }
     render() {
         return (
-            <div>
-            <a href={this.props.url} target="_blank">
+            <div className={reviewStyles.card}>
+            <a href={this.props.url} onClick={(this.openTab).bind(this)} target="_blank">
             <div className={reviewStyles.result}>
             <div className={reviewStyles.textualInfo}>
             <h3 className={reviewStyles.header}>{this.props.displayTitle}</h3>

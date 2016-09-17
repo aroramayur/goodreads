@@ -2,7 +2,8 @@
   "name": "GoodReads",
   "version": "0.0.1",
   "scripts": {
-    "build": "webpack --display-modules --watch"
+    "build-dev": "webpack --display-modules --watch",
+    "pack-extension": "./pack-extension.sh"
   },
   "dependencies": {
     "css-loader": "^0.25.0",

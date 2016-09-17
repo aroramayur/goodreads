@@ -1,6 +1,6 @@
 :local(.result) {
     width:550px;
-    border-bottom:1px solid #EEEEEE;
+    border-bottom:1px solid #337ab7;
     padding:20px 0;
 }
 
@@ -16,9 +16,11 @@
 :local(.headline) {
     font-weight: bold;
     margin:10px 0;
+    color:#337ab7;
 }
 :local(.header) {
     display: inline-block;
+    color:#337ab7;
 }
 :local(.textualInfo) {
     width:300px;
@@ -41,4 +43,7 @@
 :local(a) {
     text-decoration:none;
     color:#000000;
+}
+:local(.card) {
+    font-family:"nyt-cheltenham", georgia, "times new roman", times, serif;
 }
